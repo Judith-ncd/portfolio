@@ -1,0 +1,563 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style général */
+body {
+    cursor: crosshair;
+
+    font-family: "aktiv-grotesk", sans-serif;
+    font-weight: 400; /* ou une autre valeur selon vos besoins */
+    font-style: normal;
+}
+
+/* En-tête */
+header {
+    color: #000000;
+    padding-top: 140px ;
+    padding-bottom: 100px;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 0px;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 75px;
+
+
+}
+h3 {
+    margin: 5px;   /* Pour centrer le contenu sur la page */ 
+    margin-top: 20px; 
+ 
+}
+
+h4 {
+    font-family: "aktiv-grotesk", sans-serif;
+    font-weight: 700; /* ou une autre valeur selon vos besoins */
+    font-style: normal;
+    margin: 20px;   /* Pour centrer le contenu sur la page */
+    padding: 10px;    
+}
+
+h5 {
+    font-family: "aktiv-grotesk", sans-serif;
+    font-weight: 600; /* ou une autre valeur selon vos besoins */
+    font-style: normal;
+    margin: 5px;   /* Pour centrer le contenu sur la page */  
+    margin-top: 15px; 
+}
+h6 {
+    font-family: "aktiv-grotesk", sans-serif;
+    font-weight: 400; /* ou une autre valeur selon vos besoins */
+    font-style: normal;
+    font-size: 26px;
+    margin-top: -15px;
+
+}
+.contact {
+    padding-top: 270px ;
+}  
+.project {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+  
+  .project.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+a {
+    text-decoration: none; /* Supprime le soulignement par défaut des liens */
+    font-weight: normal;    /* Assure que le texte dans les liens n'est pas en gras */
+    color: inherit;         /* Assure que la couleur du texte des liens est héritée */
+    font-size: 15px;
+
+}
+
+p {
+    max-width: 570px; /* Définissez la largeur maximale souhaitée */
+    margin: 5px;    /*Pour centrer le contenu sur la page */
+    padding: 0px;    /* Ajoutez un padding pour l'espace autour du texte */
+}
+.medium {
+    font-weight: 500; /* Essayez des valeurs entre 400 et 500 */
+}
+nav.menu {
+    padding: 10px; /* Espacement intérieur de la barre de navigation */
+    position: -webkit-sticky; /* Pour les anciens navigateurs */
+    position: sticky;
+    top: 0;
+    background-color: #fff; /* Assurez-vous que l'arrière-plan est défini pour éviter les transparences */
+    z-index: 1000; /* Pour que le menu soit au-dessus d'autres contenus */
+}
+
+nav.menu ul {
+    list-style: none;
+    display: flex;
+}
+
+nav.menu ul li {
+    margin-left: 10px; /* Espacement entre les éléments du menu */
+}
+
+nav.menu ul li:first-child {
+    margin-left: 0; /* Supprimer l'espacement à gauche du premier élément */
+    margin-right: 86%;
+}
+
+nav.menu ul li:last-child {
+    margin-right: 0; /* Supprimer l'espacement à droite du dernier élément */
+}
+
+nav.menu ul li:nth-child(2),
+nav.menu ul li:nth-child(3) {
+    margin-left: 10px; /* Aligner À propos et Contact à droite */
+}
+
+nav.menu ul li a {
+    color: #000000;
+    text-decoration: none;
+}
+
+/* Media queries pour les petits écrans */
+/* Media queries pour les petits écrans */
+@media (max-width: 1500px) {
+    nav.menu ul {
+        justify-content: space-between; /* Répartir les éléments du menu également */
+    }
+
+    nav.menu ul li {
+        margin-left: 5px; /* Réduire l'espacement entre les éléments du menu */
+        margin-right: 5px; /* Ajouter un espacement à droite également */
+    }
+
+    nav.menu ul li:first-child {
+        margin-right: auto; /* Pousser les autres éléments vers la droite */
+    }
+}
+.second-menu {
+    padding-top: 110px;
+    display: flex;
+    justify-content: center;
+    gap: 100px; /* Espacement modéré entre les images */
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne suivante si nécessaire */
+    padding-bottom: 0;
+}
+
+.second-menu .menu-item {
+    flex: 1 1 30%; /* Chaque item prendra environ 30% de la largeur disponible */
+    max-width: 180px; /* Limite la largeur maximale des éléments */
+    margin: 10px; /* Espace entre les éléments */
+    text-align: center; /* Centre le contenu */
+}
+
+.second-menu .menu-item a {
+    display: flex;
+    align-items: center; /* Centre verticalement l'image à l'intérieur du conteneur */
+    justify-content: center;
+    height: 150px; /* Ajuste la hauteur en fonction de vos besoins */
+}
+
+.second-menu img {
+    width: auto;
+    height: 130px;
+}
+
+.second-menu img:hover {
+    transform: rotate(15deg); /* Ajuste la valeur pour la rotation désirée */
+}
+
+/* Media query pour les écrans de moins de 800px de large */
+@media (max-width: 800px) {
+    .second-menu {
+        gap: 50px; /* Réduit l'espacement entre les éléments pour les écrans moyens */
+    }
+
+    .second-menu .menu-item {
+        flex: 1 1 45%; /* Chaque item prendra environ 45% de la largeur disponible */
+        max-width: 200px; /* Ajuste la limite de largeur maximale */
+    }
+}
+
+/* Media query pour les écrans de moins de 600px de large */
+@media (max-width: 600px) {
+    .second-menu {
+        gap: 20px; /* Réduit l'espacement entre les éléments pour les petits écrans */
+    }
+
+    .second-menu .menu-item {
+        flex: 1 1 100%; /* Chaque item prendra 100% de la largeur disponible */
+        max-width: none; /* Retire la limite de largeur maximale */
+    }
+}
+
+.second-menu p {
+    margin-top: 10px; /* Ajoute un espacement entre l'image et le texte */
+    font-family: "aktiv-grotesk", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+} 
+/* Galerie d'images */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 5px; /* Très fines marges entre les images */
+    padding: 10px;
+}
+.gallery a {
+    display: block;
+    position: relative;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 0.3s ease-in-out; /* Animation pour la transformation */
+}
+.gallery video {
+    width: auto;
+    height: 74%;
+    display: block;
+    transition: opacity 0.3s ease-in-out; /* Animation pour la transformation */
+}
+.gallery a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+}
+
+.gallery a:nth-child(1)::before {
+    background-image: url('Scan 22bis.jpg'); /* Remplacer avec la nouvelle image */
+}
+
+.gallery a:nth-child(2)::before {
+    background-image: url('IMG_1974bis.jpg'); /* Remplacer avec la nouvelle image */
+}
+
+.gallery a:nth-child(3)::before {
+    background-image: url('IMG_2163bis.jpg'); /* Remplacer avec la nouvelle image */
+}
+
+.gallery a:nth-child(4)::before {
+    background-image: url('IMG_2026bis.jpg'); /* Remplacer avec la nouvelle image */
+}
+
+.gallery a:nth-child(5)::before {
+    background-image: url('textured_output.jpg'); /* Remplacer avec la nouvelle image */
+}
+
+.gallery a:nth-child(6)::before {
+    background-image: url('Lignum1.jpg'); /* Remplacer avec la nouvelle image */
+}
+.gallery a:nth-child(7)::before {
+    background-image: url('MADE.jpg'); /* Remplacer avec la nouvelle image */
+}
+.gallery a:nth-child(8)::before {
+    background-image: url('Danvez3.jpg'); /* Remplacer avec la nouvelle image */
+}
+.gallery a:nth-child(9)::before {
+    background-image: url('Hijabeuses.jpg'); /* Remplacer avec la nouvelle image */
+}
+.gallery a:nth-child(10)::before {
+    background-image: url('Alessibis.jpg'); /* Remplacer avec la nouvelle image */
+}
+.gallery a:hover::before {
+    opacity: 1;
+}
+
+/* Menu hamburger */
+.menu-toggle {
+    position: fixed;
+    bottom: 0px; /* Place l'élément 20px en haut du bord inférieur de l'écran */
+    left: 0px;
+    cursor: pointer;
+    z-index: 1000;/* Assure que le bouton est au-dessus de tout le contenu */
+}
+
+.menu-toggle .bar { /* Taille de la barre de texte*/
+    width: 100px;
+    height: 30px;
+    background-color: #d5c3ea;
+    margin: 0px;
+    transition: transform 0.3s ease-in-out;
+}
+.menu-toggle .bar .fleche {
+    color:rgb(0, 0, 0);
+    margin-left: 70%;
+}
+.menu-toggle .bar .fleche:hover {
+    color: #f1f1f1;
+  
+}
+
+.menu-toggle .bar:first-child {
+    margin-top: 10px;
+}
+
+.menu-toggle.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+/* Styles pour le menu latéral */
+.sidenav {
+    height: 60%; /* Full-height */
+    width: 0; /* Initialement caché */
+    position: fixed; /* Reste en place */
+    z-index: 1; /* Au-dessus des autres éléments */
+    bottom: 0;
+    left: 0;
+    background-color: #d5c3ea;
+    overflow-x: hidden; /* Pas de défilement horizontal */
+    transition: 0.5s; /* Transition douce */
+    padding-top: 50px; /* Un peu de padding en haut */
+    padding-left: 10px;
+    margin-left: 0px; /* Ajout de marge à gauche */
+
+}
+
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closeBtn {
+    padding: 4px 4px 4px 360px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #000000;
+    display: block;
+    transition: 0.3s;
+    position:absolute;
+    top: 10px;
+    right: 65px;
+    font-size: 23px;
+  
+}
+
+.sidenav.active {
+    width: 400px; /* Largeur du menu lorsque ouvert */
+}
+.date-projet {
+    margin: 10px; 
+} 
+
+.link {
+    padding : 0;
+    padding-bottom : 0;
+    padding-left : 0;
+    padding-right : 0;
+    padding-top : 0;
+    text-decoration: none;
+    font-size: 16px;
+    color: #000000;
+    display: block;
+    transition: 0.3s;
+}
+
+/* Styles pour le menu mobile (initiallement caché) */
+.menu-mobile {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent noir */
+    display: none; /* Caché par défaut */
+    z-index: 999; /* Assure que le menu est au-dessus de tout le contenu */
+}
+
+.menu-mobile.active {
+    display: block; /* Affiche le menu lorsque .active est appliqué */
+}
+
+.menu-items {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.menu-items ul {
+    list-style: none;
+}
+
+.menu-items ul li {
+    margin-bottom: 10px;
+}
+
+.menu-items ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    display: block;
+    padding: 15px 20px;
+    background-color: #333;
+    border-radius: 5px;
+}
+
+.menu-items ul li a:hover {
+    background-color: #555;
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr; /* Définit des colonnes de largeurs différentes */
+    gap: 20px; /* Espace entre les colonnes */
+    padding: 20px;
+}
+
+.column {
+    padding: 20px;
+}
+/* Media query pour rendre la mise en page responsive */
+@media (max-width: 800px) {
+    .about-container {
+        grid-template-columns: 1fr; /* Change à une seule colonne sur petits écrans */
+    }
+}
+/* Styles pour les boutons de navigation */
+.navigation-buttons {
+    display: flex;
+    justify-content:space-around;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: #ffffff; /* Couleur de fond du bouton */
+    color: rgb(0, 0, 0); /* Couleur du texte */
+    text-decoration: none;
+    border-radius: 5px; /* Bordures arrondies */
+    transition: background-color 0.3s ease; /* Transition pour le survol */
+}
+
+.button:hover {
+    background-color: #ffffff; /* Couleur de fond du bouton au survol */
+    color:  #d5c3ea; /* Couleur du texte */
+
+}
+#back-to-top {
+    position: absolute;
+    display: none;
+    width: 40px;
+    height: 40px;
+    background-color: #ffffff;
+    color: #000000;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    z-index: 1000; /* Pour s'assurer qu'il est au-dessus des autres éléments */
+  }
+  
+  #back-to-top:hover {
+    color: #d5c3ea;;
+  }
+  
+/* Sections */
+section {
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+/* Reset CSS pour éviter tout conflit */
+.editorial-page * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style général pour la page éditoriale */
+.editorial-page {
+    font-family: "aktiv-grotesk", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding: 20px;
+}
+
+.editorial-title {
+    font-weight: 500;
+    font-style: normal;
+    margin-bottom: 20px;
+    font-size: 36px;
+}
+
+.editorial-summary {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.editorial-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.editorial-column {
+    width: 48%;
+}
+
+.editorial-list {
+    list-style-type: none;
+}
+
+.editorial-list li {
+    margin-bottom: 20px;
+}
+
+.editorial-list a {
+    font-size: 18px;
+    color: #000;
+    text-decoration: none;
+    font-weight: 400;
+}
+.editorial-list a:hover {
+    text-decoration-line:underline;
+
+}
+.editorial-list p {
+    font-size: 18px;
+    color: #000;
+    margin-top: 0px;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+/* Pied de page */
+/* Style du footer */
+footer {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centre le contenu horizontalement */
+    align-items: center; /* Centre le contenu verticalement si nécessaire */
+    background-color: #ffffff;
+    padding: 10px 0;
+}
+.crédit {
+    font-size: 11px;
+}
+.crédit-page {
+    padding-top: 250px;
+    font-size: 11px;
+}
+footer p {
+    margin: 0;
+}
