@@ -24,3 +24,19 @@ document.addEventListener("DOMContentLoaded", function() {
         console.error("One or more elements are not found:", { sidenav, openBtn, closeBtn });
     }
 });
+
+// APPARITION DES IMAGES AU SCROLL
+const reveals = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target); // animation une seule fois
+    }
+  });
+}, {
+  threshold: 0.3
+});
+
+reveals.forEach(el => observer.observe(el));
