@@ -16,11 +16,12 @@ body {
 
 /* En-tête */
 header {
+    padding-left: 80px;
     color: #000000;
-    padding-top: 90px ;
+    padding-top: 90px;
     padding-bottom: 100px;
     text-align: left;
-    padding-left: 90px ;
+
 
 }
 
@@ -56,11 +57,11 @@ h5 {
 }
 h6 {
     font-family: "helvetica-neue-lt-pro", sans-serif;
-    font-weight: 400; /* ou une autre valeur selon vos besoins */
+    font-weight: 700;
     font-style: normal;
-    font-size: 26px;
+    font-size: 18px;
     margin-top: 0px;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 
 }
 
@@ -76,6 +77,14 @@ h6 {
     animation: blink 1s infinite;
   }
   
+
+h4.title::after {
+    width: 25px;
+    height: 25px;
+    margin-left: 14px;
+}
+
+
   /* Animation */
   @keyframes blink {
     0%   { opacity: 1; }
@@ -84,9 +93,9 @@ h6 {
   }
 
 .intro {
-    margin-top: 20px;
+    margin-top: 0px;
     margin-bottom: 20px;
-    max-width: 800px;
+    max-width: 600px;
 
 }   
 .project {
@@ -111,42 +120,52 @@ a {
 p {
     padding: 0px;    /* Ajoutez un padding pour l'espace autour du texte */
     margin-bottom: 10px;
-    line-height: 1.4;
-    font-size: 16px;
-
-    
+    line-height: 1.15; /* espace réduit entre les lignes */
+    font-size: 18px;
 }
+
+.text-body {
+    line-height: 1.40; /* plus aéré, adapté à la lecture */
+}
+
 .medium {
-    font-weight: 500; /* Essayez des valeurs entre 400 et 500 */
+    font-weight: 500;
+}
+
+.about-container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    margin: 0 90px; /* 90px à gauche ET à droite, comme le header */
+}
+
+.column {
+    flex: 1; /* chaque colonne prend une largeur égale */
+}
+
+.medium {
+    font-weight: 500;
 }
 
 .column.column-1 {
-margin-left: -25px;
+    margin-left: 0px;
 }
 
-.column:nth-child(2) {
+.column-2 {
     max-width: 40ch;
 }
 
-h6 + p {
-    margin-top: 15px; /* espace entre titre et première ligne */
-  }
-  
-  h6:not(:first-of-type) {
-    margin-top: 70px;
-  }
+h6:not(:first-of-type) {
+    margin-top: 40px;
+}
 
-
-  .column-1 p {
-    margin-bottom: 16px;
-  }
-
+.column-1 p,
 .column-2 p {
-    margin-bottom: 16px;
-  }
+    margin-bottom: 10px;
+}
 
 nav.menu {
-    padding: 10px 20px; /* top/bottom 10px, left/right 20px */
+    padding: 10px 10px; /* top/bottom 10px, left/right 20px */
     position: -webkit-sticky; /* Pour les anciens navigateurs */
     position: sticky;
     top: 0;
@@ -336,20 +355,21 @@ nav.menu ul li a:hover {
 
 
 .gallery .project:nth-child(1) a::before {
-    background-image: url('Couverture home.jpg');
-}
-
-.gallery .project:nth-child(2) a::before {
     background-image: url('Mirazur\ 5.jpg');
 }
 
+.gallery .project:nth-child(2) a::before {
+    background-image: url('Couverture home.jpg');
+}
 .gallery .project:nth-child(3) a::before {
-    background-image: url('IMG_7771.jpg');
+    background-image: url('n°4.jpg');
 }
 
+
 .gallery .project:nth-child(5) a::before {
-    background-image: url('Scan\ 22bis.jpg');
+    background-image: url('mémoire.jpg');
 }
+
 
 .gallery .project:nth-child(7) a::before {
     background-image: url('20260120160812_00004.jpg');
@@ -366,35 +386,35 @@ nav.menu ul li a:hover {
 /* ========================= */
 
 .project-info {
-    margin-top: 12px;
-    display: flex;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: block; /* au lieu de flex */
     justify-content: space-between;
     align-items: baseline;
 }
 
 /* Titre */
 .project-title {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 400;
     opacity: 1;
-    margin: 1px 0 0 0;
+    margin: 0px 0 0 0;
 }
 
 /* Sujet */
 .project-subject {
-    font-size: 14px;
-    font-weight: 400;
-    font-style: italic;
+    font-size: 12px;
+    font-weight: 200;
+   /*font-style: italic;*/
     opacity: 1;
-    margin: 0;
+    margin-top: 0px;
 }
 
 /* Date */
 .subject-page {
-    margin-top: 40px;
-    font-size: 14px;
+    margin-top: 15px;
+    font-size: 12px;
     font-weight: 400;
-    font-style: italic;
     opacity: 1;
   
 }
@@ -555,21 +575,6 @@ nav.menu ul li a:hover {
     background-color: #555;
 }
 
-.about-container {
-    display: grid;
-    grid-template-columns: 6fr 4fr; /* Définit des colonnes de largeurs différentes */
-    gap: 20px; /* Espace entre les colonnes */
-    padding: 20px;
-    margin-left: 90px;
-}
-
-.about-container p {
-    max-width: 570px;
-}
-
-.column {
-    padding: 20px;
-}
 /* Media query pour rendre la mise en page responsive */
 @media (max-width: 800px) {
     .about-container {
@@ -784,7 +789,7 @@ section {
   }
   footer {
     width: 100%;
-    padding: 210px 90px 90px 90px;
+    padding: 200px 20px 20px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -818,7 +823,7 @@ footer a {
 }
 
 .footer-sep {
-    color: rgba(0, 0, 0, 0.35);
+    color: rgba(255, 255, 255, 0);
     font-size: 14px;
 }
 
