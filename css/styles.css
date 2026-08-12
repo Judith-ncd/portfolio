@@ -578,7 +578,11 @@ nav.menu ul li a:hover {
 /* Media query pour rendre la mise en page responsive */
 @media (max-width: 800px) {
     .about-container {
-        grid-template-columns: 1fr; /* Change à une seule colonne sur petits écrans */
+        flex-direction: column; /* MODIFIÉ : empile les colonnes (l'ancien "grid-template-columns" ne s'appliquait pas car .about-container est en flex, pas en grid) */
+    }
+
+    .column {
+        width: 100%; /* AJOUTÉ : chaque colonne occupe toute la largeur une fois empilée */
     }
 }
 
